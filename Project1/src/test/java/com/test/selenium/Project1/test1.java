@@ -35,7 +35,7 @@ public class test1 {
     driver.findElement(By.id("email-widget")).click();;
     String sendTo = driver.findElement(By.id("email-widget")).getAttribute("innerText");
    
-    //Clear the to field and the emailID
+    //Clear the to field and send the email
      driver.findElement(By.name("to")).clear();
      driver.findElement(By.name("to")).sendKeys(sendTo); 
      Thread.sleep(1000);
