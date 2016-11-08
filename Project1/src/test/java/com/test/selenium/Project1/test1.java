@@ -37,9 +37,12 @@ public class test1 {
    
     //Clear the to field and the emailID
      driver.findElement(By.name("to")).clear();
-     driver.findElement(By.name("to")).sendKeys(sendTo);     
-     driver.findElement(By.name("subject")).sendKeys(title);   
-     driver.findElement(By.name("body")).sendKeys(body);   
+     driver.findElement(By.name("to")).sendKeys(sendTo); 
+     Thread.sleep(1000);
+     driver.findElement(By.name("subject")).sendKeys(title);
+     Thread.sleep(1000);
+     driver.findElement(By.name("body")).sendKeys(body);  
+     Thread.sleep(1000);
      driver.findElement(By.name("send")).click();
      Thread.sleep(13000);
         
@@ -48,8 +51,10 @@ public class test1 {
      String subjText = driver.findElement(By.className("email_subject")).getAttribute("innerText");
      String bodyText = driver.findElement(By.className("email_body")).getText();
      Assert.assertEquals(title, subjText);
-     Assert.assertTrue(body, bodyText.contains(body));   
+     Assert.assertTrue(body, bodyText.contains(body)); 
+     Thread.sleep(1000);
      driver.findElement(By.id("back_to_inbox_link")).click();
+     Thread.sleep(1000);
 
     //Delete the sent email
     driver.findElement(By.xpath("//tbody[@id='email_list']/tr[1]/td[1]")).click();
@@ -58,5 +63,7 @@ public class test1 {
   }
 }
     
+    
+   
     
    
